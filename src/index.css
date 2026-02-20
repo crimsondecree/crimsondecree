@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 45 30% 75%;
+
+    --card: 0 0% 8%;
+    --card-foreground: 45 30% 75%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 45 30% 75%;
+
+    --primary: 0 70% 40%;
+    --primary-foreground: 45 80% 90%;
+
+    --secondary: 45 40% 20%;
+    --secondary-foreground: 45 30% 75%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 45 15% 50%;
+
+    --accent: 45 60% 45%;
+    --accent-foreground: 0 0% 5%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 40% 25%;
+    --input: 0 0% 15%;
+    --ring: 0 70% 40%;
+
+    --radius: 0px;
+
+    --sidebar-background: 0 0% 8%;
+    --sidebar-foreground: 45 30% 75%;
+    --sidebar-primary: 0 70% 40%;
+    --sidebar-primary-foreground: 45 80% 90%;
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 45 30% 75%;
+    --sidebar-border: 0 40% 25%;
+    --sidebar-ring: 0 70% 40%;
+
+    --font-body: 'Times New Roman', 'IM Fell English', serif;
+    --font-heading: 'IM Fell English', 'Times New Roman', serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    cursor: default;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+  }
+
+  ::selection {
+    background: hsl(0, 70%, 40%);
+    color: hsl(45, 80%, 90%);
+  }
+}
+
+/* Retro blink animation */
+@keyframes blink-text {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.blink {
+  animation: blink-text 1s step-end infinite;
+}
+
+/* Occult separator */
+.occult-separator {
+  text-align: center;
+  letter-spacing: 0.5em;
+  color: hsl(0, 70%, 40%);
+}
+
+/* Soviet table styling */
+.soviet-table {
+  border-collapse: collapse;
+  border: 2px solid hsl(0, 70%, 40%);
+  width: 100%;
+  font-family: var(--font-body);
+}
+
+.soviet-table td,
+.soviet-table th {
+  border: 1px solid hsl(0, 40%, 25%);
+  padding: 8px 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.soviet-table th {
+  background: hsl(0, 70%, 20%);
+  color: hsl(45, 80%, 90%);
+  font-weight: bold;
+}
+
+/* Hit counter style */
+.hit-counter {
+  font-family: 'Courier New', monospace;
+  background: hsl(0, 0%, 0%);
+  color: hsl(120, 100%, 50%);
+  padding: 2px 8px;
+  border: 1px inset hsl(0, 0%, 30%);
+  display: inline-block;
+  font-size: 12px;
+}
+
+/* Marquee replacement */
+@keyframes scroll-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.scroll-text {
+  animation: scroll-left 15s linear infinite;
+  white-space: nowrap;
+}
+
+/* Retro link styles */
+a, .retro-link {
+  color: hsl(0, 70%, 50%);
+  text-decoration: underline;
+}
+
+a:visited, .retro-link:visited {
+  color: hsl(300, 40%, 40%);
+}
+
+/* Glow effect for headings */
+.occult-glow {
+  text-shadow: 0 0 10px hsl(0, 70%, 40%), 0 0 20px hsl(0, 70%, 30%);
+}
